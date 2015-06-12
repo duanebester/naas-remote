@@ -6,7 +6,7 @@ import common.Message
 object RemoteManager extends App  {
   val system = ActorSystem("HelloRemoteSystem")
   val remoteActor = system.actorOf(Props[RemoteManagerActor], name = "RemoteManagerActor")
-  //remoteActor ! Message("The RemoteManagerActor is alive")
+  remoteActor ! Message("The RemoteManagerActor is alive")
 }
 
 class RemoteManagerActor extends Actor {
